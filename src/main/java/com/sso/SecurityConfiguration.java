@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
-                .addFilterAfter(new CustomFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new CustomFilter(), BasicAuthenticationFilter.class)
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
